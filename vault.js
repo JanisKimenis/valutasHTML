@@ -9,14 +9,16 @@ const baseRates = {
 const inputValue = document.getElementById("input");
 const button = document.getElementById("button");
 const outputText = document.getElementById("output");
-const selectElement = document.getElementById("selectElement");
+const selectElement1 = document.getElementById("selectElement1");
+const selectElement2 = document.getElementById("selectElement2");
 
 button.addEventListener("click", function () {
   let userInput = inputValue.value;
-  let userVault = selectElement.value;
-  let eurVault = baseRates.EUR[userVault];
+  let userVault1 = selectElement1.value;
+  let userVault2 = selectElement2.value;
+  let vault = baseRates[userVault1][userVault2];
 
-  let result = userInput * eurVault;
+  let result1 = vault * userInput;
 
-  outputText.innerText = result;
+  outputText.innerText = result1;
 });
